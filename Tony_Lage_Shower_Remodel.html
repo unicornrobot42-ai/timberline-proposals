@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony Lage - Walk-In Shower Remodel Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .proposal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #19412c 0%, #312509 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.95;
+            letter-spacing: 0.5px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            color: #e9af3b;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .project-info {
+            background: #f9f9f9;
+            border-left: 4px solid #e9af3b;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .project-info h3 {
+            color: #19412c;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .project-info p {
+            color: #333;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
+        .section-title {
+            color: #19412c;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e9af3b;
+            padding-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        table th {
+            background: #f0f0f0;
+            color: #19412c;
+            text-align: left;
+            padding: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #19412c;
+        }
+        
+        table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .amount {
+            text-align: right;
+            font-weight: 600;
+            color: #19412c;
+        }
+        
+        .labor-row {
+            background: #fafafa;
+        }
+        
+        .allowance-row {
+            background: #f5f5f5;
+            color: #666;
+        }
+        
+        .discount-row {
+            background: #e8f5e9;
+            color: #2d5016;
+            font-weight: 600;
+        }
+        
+        .subtotal-row {
+            background: #f0f0f0;
+            border-top: 2px solid #19412c;
+            border-bottom: 2px solid #19412c;
+            font-weight: 700;
+        }
+        
+        .total-row {
+            background: #19412c;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .total-row td {
+            border: none;
+            padding: 18px 12px;
+        }
+        
+        .summary-box {
+            background: linear-gradient(135deg, #e9af3b 0%, #d49d2d 100%);
+            color: #19412c;
+            padding: 25px;
+            border-radius: 4px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        
+        .add-ons {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        
+        .add-ons h4 {
+            color: #19412c;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .add-on-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        
+        .add-on-item:last-child {
+            border-bottom: none;
+        }
+        
+        .add-on-price {
+            color: #19412c;
+            font-weight: 600;
+        }
+        
+        .terms {
+            background: #f5f5f5;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .terms h4 {
+            color: #19412c;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: #19412c;
+            color: #e9af3b;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 4px solid #e9af3b;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .proposal-container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <div class="header">
+            <div class="logo">🌲 TIMBERLINE BUILD CO</div>
+            <h1>WALK-IN SHOWER REMODEL</h1>
+            <p>Custom Bathroom Renovation Estimate</p>
+        </div>
+        
+        <div class="content">
+            <div class="project-info">
+                <h3>Project Details</h3>
+                <p><strong>Client:</strong> Tony Lage</p>
+                <p><strong>Project Type:</strong> Bathroom Conversion — Walk-In Shower Installation</p>
+                <p><strong>Scope:</strong> Complete conversion of existing tub/shower combo to walk-in shower with tilework, fixtures, and accessibility features</p>
+                <p><strong>Date:</strong> February 28, 2026</p>
+            </div>
+            
+            <div class="section-title">Detailed Cost Breakdown</div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item Description</th>
+                        <th>Type</th>
+                        <th class="amount">Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="labor-row">
+                        <td>Demo & Blocking</td>
+                        <td>Labor</td>
+                        <td class="amount">$700.00</td>
+                    </tr>
+                    <tr class="labor-row">
+                        <td>Hot Mop (Waterproofing)</td>
+                        <td>Labor</td>
+                        <td class="amount">$350.00</td>
+                    </tr>
+                    <tr class="labor-row">
+                        <td>Plumbing Work</td>
+                        <td>Labor</td>
+                        <td class="amount">$800.00</td>
+                    </tr>
+                    <tr class="labor-row">
+                        <td>Tile Labor & Installation</td>
+                        <td>Labor</td>
+                        <td class="amount">$2,200.00</td>
+                    </tr>
+                    <tr class="labor-row">
+                        <td>Shower Door/Glass Frame</td>
+                        <td>Material</td>
+                        <td class="amount">$1,507.00</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="2">Subtotal: Labor & Materials</td>
+                        <td class="amount">$5,557.00</td>
+                    </tr>
+                    <tr class="labor-row">
+                        <td><strong>Labor & Materials w/ 50% Markup</strong></td>
+                        <td></td>
+                        <td class="amount"><strong>$8,335.50</strong></td>
+                    </tr>
+                    <tr class="allowance-row">
+                        <td>Tile & Trim Allowance <em>(client supplies or we source)</em></td>
+                        <td>Pass-Through</td>
+                        <td class="amount">$700.00</td>
+                    </tr>
+                    <tr class="allowance-row">
+                        <td>Fixtures Allowance <em>(client supplies or we source)</em></td>
+                        <td>Pass-Through</td>
+                        <td class="amount">$750.00</td>
+                    </tr>
+                    <tr class="subtotal-row">
+                        <td colspan="2">Subtotal: Before Discount</td>
+                        <td class="amount">$10,764.05</td>
+                    </tr>
+                    <tr class="discount-row">
+                        <td colspan="2"><strong>10% Compass Bible Church Member Discount</strong></td>
+                        <td class="amount"><strong>-$1,076.41</strong></td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2"><strong>TOTAL PROJECT COST</strong></td>
+                        <td class="amount"><strong>$9,687.65</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="summary-box">
+                ✓ Final Estimate: $9,687.65 (Discount Applied)
+            </div>
+            
+            <div class="section-title">Optional Add-Ons</div>
+            
+            <div class="add-ons">
+                <h4>Enhance Your Shower Experience</h4>
+                <div class="add-on-item">
+                    <span>Design Consultation — Professional Materials & Finishes Selection</span>
+                    <span class="add-on-price">$350.00</span>
+                </div>
+                <p style="font-size: 13px; color: #666; margin: 10px 0; padding: 10px 0; border-bottom: 1px solid #eee;">Our designer will work with you to identify your style preferences, then curate tile, glass, and fixture options that complement your home and stay within your budget. Professional guidance ensures a cohesive, high-quality finish.</p>
+                <div class="add-on-item">
+                    <span>Standard-Size Niche (recessed shelf)</span>
+                    <span class="add-on-price">$300.00</span>
+                </div>
+                <div class="add-on-item">
+                    <span>Specialty Glass Colors (blues, grays, smoked)</span>
+                    <span class="add-on-price">$450.00</span>
+                </div>
+            </div>
+            
+            <div class="section-title">Important Notes</div>
+            
+            <div class="terms">
+                <h4>Allowances & Materials</h4>
+                <p><strong>Tile & Trim ($700)</strong> and <strong>Fixtures ($750)</strong> are pass-through allowances. You may provide your own selections at no additional cost, or we can source premium options at the allowance price. If you choose upgrades beyond the allowance, the difference will be added to your final invoice.</p>
+                
+                <h4 style="margin-top: 15px;">Scope & Assumptions</h4>
+                <ul style="margin-left: 20px; margin-top: 8px;">
+                    <li>Standard walk-in shower with no curb or minimal curb</li>
+                    <li>Frameless or semi-frameless glass door</li>
+                    <li>Single showerhead with valve trim</li>
+                    <li>Assumes standard plumbing layout (no major relocations)</li>
+                    <li>Tile installation includes labor only; tile materials are covered under allowance</li>
+                </ul>
+                
+                <h4 style="margin-top: 15px;">Timeline & Next Steps</h4>
+                <ul style="margin-left: 20px; margin-top: 8px;">
+                    <li>Deposit (50%) required to schedule</li>
+                    <li>Project timeline: 7–10 business days from start date</li>
+                    <li>Final balance due upon completion</li>
+                    <li>Please confirm tile, trim, and fixture selections within 3 days of contract signing</li>
+                </ul>
+            </div>
+            
+            <div class="terms" style="background: #fffbf0; border-left: 4px solid #e9af3b;">
+                <h4 style="color: #19412c;">Compass Bible Church Discount</h4>
+                <p>Thank you for your faith community affiliation. We're honored to provide a 10% member discount on your project. This discount applies to all labor and material costs.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Timberline Build Co.</strong> | Residential Remodeling Specialists</p>
+            <p>Orange County, CA | Licensed & Insured</p>
+            <p>Questions? Reach out and let's build something beautiful together.</p>
+        </div>
+    </div>
+</body>
+</html>

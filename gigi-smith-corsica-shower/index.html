@@ -44,9 +44,9 @@
     }
 
     .cover-logo-img {
-      height: 60px;
+      height: 80px;
       width: auto;
-      filter: brightness(0) invert(1);
+      /* Logo has white text + gold mountain on black — displays perfectly on dark green */
     }
 
     .cover-logo {
@@ -131,10 +131,10 @@
       letter-spacing: 1px;
     }
 
-    /* ── HEADER IMAGE ── */
-    .header-hero {
+    /* ── HERO BANNER ── */
+    .hero-banner {
       width: 100%;
-      height: 360px;
+      height: 400px;
       object-fit: cover;
       display: block;
     }
@@ -144,10 +144,12 @@
       max-width: 860px;
       margin: 0 auto;
       padding: 72px 48px;
-      border-bottom: 1px solid var(--light);
+      border-top: 2px solid var(--gold);
     }
 
-    .section:last-child { border-bottom: none; }
+    .section:first-of-type {
+      border-top: none;
+    }
 
     .section-label {
       font-size: 10px;
@@ -171,6 +173,59 @@
       line-height: 1.8;
       color: #444;
       margin-bottom: 16px;
+    }
+
+    /* ── FEATURE IMAGE ── */
+    .feature-image-wrapper {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .feature-image {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-caption {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 16px;
+    }
+
+    /* ── IMAGE GRID (2 columns) ── */
+    .image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .image-grid-item {
+      text-align: center;
+    }
+
+    .image-grid-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .image-grid-item .image-caption {
+      margin-top: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ── SCOPE LIST ── */
@@ -242,6 +297,7 @@
       border-left: 4px solid var(--gold);
       border-radius: 4px;
       padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .allowance-card h4 {
@@ -285,6 +341,7 @@
       margin-top: 32px;
       border-radius: 6px;
       overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     }
 
     .timeline-phase {
@@ -315,57 +372,71 @@
     .phase-3 { background: var(--navy); color: var(--white); }
     .phase-4 { background: var(--gold); color: var(--dark); }
 
-    /* ── OPTIONAL ADD-INS ── */
+    /* ── OPTIONAL ADD-INS (Hotel Upgrade Style) ── */
     .addin-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 24px;
+      gap: 32px;
+      margin-top: 32px;
     }
 
     .addin-card {
       background: var(--white);
       border: 2px solid var(--green);
-      border-radius: 8px;
-      padding: 28px 24px;
+      border-radius: 12px;
+      overflow: hidden;
       position: relative;
-      transition: box-shadow 0.2s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 8px 24px rgba(25, 65, 44, 0.1);
     }
 
     .addin-card:hover {
-      box-shadow: 0 8px 24px rgba(25, 65, 44, 0.12);
+      box-shadow: 0 16px 48px rgba(25, 65, 44, 0.18);
+      transform: translateY(-4px);
+    }
+
+    .addin-card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .addin-card-content {
+      padding: 28px 24px;
     }
 
     .addin-card .addin-badge {
       position: absolute;
-      top: -12px;
-      right: 20px;
+      top: 16px;
+      right: 16px;
       background: var(--gold);
       color: var(--dark);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 6px 12px;
-      border-radius: 4px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .addin-card h4 {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--green);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .addin-card p {
       font-size: 14px;
       color: #555;
       line-height: 1.7;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .addin-card .addin-price {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 800;
       color: var(--green);
     }
@@ -376,14 +447,21 @@
       color: #888;
     }
 
+    @media (max-width: 640px) {
+      .addin-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ── INVESTMENT ── */
     .investment-box {
       background: var(--green);
       color: var(--white);
-      border-radius: 8px;
-      padding: 48px;
+      border-radius: 12px;
+      padding: 56px;
       text-align: center;
       margin-top: 16px;
+      box-shadow: 0 12px 40px rgba(25, 65, 44, 0.25);
     }
 
     .investment-box .inv-label {
@@ -418,9 +496,10 @@
     .payment-card {
       background: var(--white);
       border: 1px solid var(--light);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 28px 20px;
       text-align: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     }
 
     .payment-card .pct {
@@ -456,12 +535,13 @@
     .terms-box {
       background: var(--white);
       border: 1px solid var(--light);
-      border-radius: 6px;
-      padding: 28px 32px;
+      border-radius: 8px;
+      padding: 32px 36px;
       margin-top: 16px;
       font-size: 14px;
       line-height: 1.8;
       color: #555;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
     }
 
     /* ── FOOTER BAR ── */
@@ -469,9 +549,18 @@
       background: var(--dark);
       color: rgba(255,255,255,0.5);
       text-align: center;
-      padding: 24px;
+      padding: 28px;
       font-size: 12px;
       letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-bar img {
+      height: 50px;
+      width: auto;
     }
 
     .footer-bar strong {
@@ -491,7 +580,7 @@
 ══════════════════════════════════════════════ -->
 <div class="cover">
   <div class="cover-logo-wrapper">
-    <img src="logo-header.png" alt="Timberline Build Co" class="cover-logo-img" />
+    <img src="timberline-logo-official.png" alt="Timberline Build Co" class="cover-logo-img" />
     <div class="cover-logo">
       Timberline Build Co
       <span>Licensed General Contractor · Orange County, CA</span>
@@ -523,9 +612,9 @@
 </div>
 
 <!-- ══════════════════════════════════════════════
-     HEADER HERO IMAGE
+     HERO BANNER (Full-bleed after cover)
 ══════════════════════════════════════════════ -->
-<img src="header-image.png" alt="Timberline Build Co — Premium Bathroom Remodeling" class="header-hero" />
+<img src="img-hero.png" alt="Timberline Build Co — Premium Bathroom Remodeling" class="hero-banner" />
 
 <!-- ══════════════════════════════════════════════
      PROJECT OVERVIEW
@@ -542,6 +631,12 @@
   <p>
     You'll have one point of contact throughout — me. Timberline self-performs all project management and coordinates trade work directly. No subcontractor chaos, no finger-pointing between crews. Just clear communication and quality craftsmanship from start to finish.
   </p>
+  
+  <!-- Feature Image: AI Render -->
+  <div class="feature-image-wrapper">
+    <img src="timberline-corsica-shower-render-v2.png" alt="Design Concept — 6127 Corsica Cir" class="feature-image" />
+    <div class="image-caption">Design Concept — 6127 Corsica Cir</div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -562,6 +657,18 @@
     <li><strong>Porta potty on site</strong> — crew stays outside your home during work hours</li>
     <li><strong>Full cleanup and haul-off</strong> — all demo debris removed, site left broom-clean daily</li>
   </ul>
+  
+  <!-- 2-Column Image Grid -->
+  <div class="image-grid">
+    <div class="image-grid-item">
+      <img src="img-tile-detail.png" alt="Tile & Niche Work" />
+      <div class="image-caption">Tile & Niche Work</div>
+    </div>
+    <div class="image-grid-item">
+      <img src="img-tub.png" alt="Tub Replacement" />
+      <div class="image-caption">Tub Replacement</div>
+    </div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -610,17 +717,6 @@
 </div>
 
 <!-- ══════════════════════════════════════════════
-     RENDER
-══════════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-label">Visualization</div>
-  <div class="section-title">Design Direction</div>
-  <p>The concept render below shows the general direction — clean tile, that beautiful porthole window as a focal point, and a modern aesthetic that feels timeless rather than trendy. Your final tile selection drives the exact look.</p>
-  <img class="render-img" src="timberline-corsica-shower-render-v2.png" alt="Shower remodel render — 6127 Corsica Cir" onerror="this.style.display='none'; document.getElementById('render-fallback').style.display='flex';" />
-  <div class="render-placeholder" id="render-fallback" style="display:none;">Render — Tile Shower Concept</div>
-</div>
-
-<!-- ══════════════════════════════════════════════
      TIMELINE
 ══════════════════════════════════════════════ -->
 <div class="section">
@@ -649,7 +745,7 @@
 </div>
 
 <!-- ══════════════════════════════════════════════
-     OPTIONAL ADD-INS
+     OPTIONAL ADD-INS (Hotel Upgrade Style)
 ══════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-label">Upgrade Your Project</div>
@@ -657,16 +753,21 @@
   <p>Want to take this remodel further? These premium upgrades pair perfectly with your shower project and can be added before or during construction.</p>
   <div class="addin-grid">
     <div class="addin-card">
+      <img src="img-vanity.png" alt="New Vanity Countertops" class="addin-card-image" />
       <div class="addin-badge">Popular</div>
-      <h4>New Vanity Countertops</h4>
-      <p>Quartz countertop installation over existing vanity. Customer to provide sink and faucet. We handle demo of existing top, template, and install.</p>
-      <div class="addin-price">+$2,500 <span>added to project</span></div>
+      <div class="addin-card-content">
+        <h4>New Vanity Countertops</h4>
+        <p>Quartz countertop installation over existing vanity. Customer to provide sink and faucet. We handle demo of existing top, template, and install.</p>
+        <div class="addin-price">+$2,500 <span>added to project</span></div>
+      </div>
     </div>
     <div class="addin-card">
       <div class="addin-badge">Upgrade</div>
-      <h4>Soffit Removal + Vanity Lighting</h4>
-      <p>Remove existing soffit, patch and repair drywall, run and install 3 recessed 4" can lights over vanity. Includes electrical rough and finish.</p>
-      <div class="addin-price">+$900 <span>added to project</span></div>
+      <div class="addin-card-content" style="padding-top: 228px;">
+        <h4>Soffit Removal + Vanity Lighting</h4>
+        <p>Remove existing soffit, patch and repair drywall, run and install 3 recessed 4" can lights over vanity. Includes electrical rough and finish.</p>
+        <div class="addin-price">+$900 <span>added to project</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -731,8 +832,12 @@
   </div>
 </div>
 
+<!-- ══════════════════════════════════════════════
+     FOOTER BAR
+══════════════════════════════════════════════ -->
 <div class="footer-bar">
-  <strong>Timberline Build Co</strong> · Licensed General Contractor · Orange County, CA · 949-229-1692
+  <img src="timberline-logo-official.png" alt="Timberline Build Co" />
+  <div><strong>Timberline Build Co</strong> · Licensed General Contractor · Orange County, CA · 949-229-1692</div>
 </div>
 
 </body>

@@ -372,87 +372,6 @@
     .phase-3 { background: var(--navy); color: var(--white); }
     .phase-4 { background: var(--gold); color: var(--dark); }
 
-    /* ── OPTIONAL ADD-INS (Hotel Upgrade Style) ── */
-    .addin-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 32px;
-    }
-
-    .addin-card {
-      background: var(--white);
-      border: 2px solid var(--green);
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-      box-shadow: 0 8px 24px rgba(25, 65, 44, 0.1);
-    }
-
-    .addin-card:hover {
-      box-shadow: 0 16px 48px rgba(25, 65, 44, 0.18);
-      transform: translateY(-4px);
-    }
-
-    .addin-card-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .addin-card-content {
-      padding: 28px 24px;
-    }
-
-    .addin-card .addin-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--gold);
-      color: var(--dark);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 8px 14px;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .addin-card h4 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 14px;
-    }
-
-    .addin-card p {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .addin-card .addin-price {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--green);
-    }
-
-    .addin-card .addin-price span {
-      font-size: 14px;
-      font-weight: 500;
-      color: #888;
-    }
-
-    @media (max-width: 640px) {
-      .addin-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     /* ── INVESTMENT ── */
     .investment-box {
       background: var(--green);
@@ -653,10 +572,28 @@
     <li><strong>Tub removal and replacement</strong> — existing tub removed, new standard alcove tub installed</li>
     <li><strong>Complete plumbing</strong> — rough and finish work including tub set, drain connections, and all water lines</li>
     <li><strong>Shower trim kit (head and tub spout)</strong> — finish TBD</li>
+    <li><strong>Remove existing soffit, patch and repair drywall, install 3 recessed 4" can lights over vanity</strong> — includes electrical rough and finish</li>
+    <li><strong>Quartz countertop installation on vanity</strong> — template, demo of existing top, and install (sinks and faucets included per allowance below)</li>
+    <li><strong>Install 2 undermount sinks</strong> — per allowance</li>
+    <li><strong>Install 2 Delta faucets</strong> — per allowance</li>
+    <li><strong>Paint entire bathroom</strong> — walls and ceiling</li>
+    <li><strong>Install LVP flooring (Lifeproof, 90 sq ft) with baseboard</strong></li>
     <li><strong>Job site protection</strong> — floor coverings, zip walls, and dust barriers throughout work area</li>
     <li><strong>Porta potty on site</strong> — crew stays outside your home during work hours</li>
     <li><strong>Full cleanup and haul-off</strong> — all demo debris removed, site left broom-clean daily</li>
   </ul>
+  
+  <!-- Image Grid: Vanity and Can Lights -->
+  <div class="image-grid">
+    <div class="image-grid-item">
+      <img src="img-vanity.png" alt="Vanity Countertop" />
+      <div class="image-caption">Quartz Vanity Countertop</div>
+    </div>
+    <div class="image-grid-item">
+      <img src="img-can-lights.png" alt="Recessed Can Lights" />
+      <div class="image-caption">Recessed Can Lights</div>
+    </div>
+  </div>
   
   <!-- Feature Image: Tub Replacement -->
   <div class="feature-image-wrapper">
@@ -675,11 +612,10 @@
   <ul class="not-included-list">
     <li><strong>Shower curtain or rod</strong> — not included; client to provide if desired</li>
     <li><strong>Glass shower enclosure</strong> — frameless or framed glass available as an upgrade</li>
-    <li><strong>Vanity, toilet, or fixtures outside shower/tub area</strong> — work is confined to shower and tub</li>
+    <li><strong>Vanity, toilet, or fixtures outside shower/tub area</strong> — work is confined to shower, tub, vanity top, and flooring</li>
     <li><strong>Permits</strong> — available upon request (typically $500–$1,500 depending on city requirements)</li>
     <li><strong>Tile beyond material allowance</strong> — client selects tile; any overage billed at cost</li>
-    <li><strong>Painting or drywall work</strong> — walls outside shower area not included</li>
-    <li><strong>Electrical work</strong> — no rewiring, new outlets, or lighting changes included</li>
+    <li><strong>Quartz slab</strong> — client selects and provides, or sourced per allowance</li>
   </ul>
 </div>
 
@@ -692,22 +628,31 @@
   <p>The items below are included at the allowances listed. You choose the exact materials — we help guide selections and handle ordering. Anything above allowance is billed as a straightforward change order at our cost.</p>
   <div class="allowance-grid">
     <div class="allowance-card">
-      <h4>Tile Material</h4>
-      <p>$800 allowance included. Client selects tile for shower walls, bench, and niche. Overages billed at cost with no markup.</p>
+      <h4>Tile Material — $800</h4>
+      <p>Client selects tile for shower walls, bench, and niche. Overages billed at cost with no markup.</p>
     </div>
     <div class="allowance-card">
-      <h4>Replacement Tub</h4>
-      <p>$400 allowance for standard white alcove tub. Upgrade to soaking tub or specialty unit available — difference billed as change order.</p>
+      <h4>Replacement Tub — $400</h4>
+      <p>Standard alcove tub included; upgrade selections billed as CO.</p>
     </div>
     <div class="allowance-card">
-      <h4>Fixtures</h4>
-      <p>$300 allowance for shower trim kit (head and tub spout). Client selects finish — any overage billed as change order.</p>
+      <h4>Shower Trim Kit — $300</h4>
+      <p>Client selects finish (head and tub spout); overage billed as CO.</p>
     </div>
     <div class="allowance-card">
-      <h4>Permits</h4>
-      <p>Not included in base scope. If required or desired, we handle the process end-to-end — typical cost $500–$1,500 depending on city.</p>
+      <h4>Sinks (2x) — $220</h4>
+      <p>Client selects undermount sinks; overage billed as CO.</p>
+    </div>
+    <div class="allowance-card">
+      <h4>Delta Faucets (2x) — $120</h4>
+      <p>Client selects Delta faucet finish; overage billed as CO.</p>
+    </div>
+    <div class="allowance-card">
+      <h4>LVP Flooring + Baseboard — $900</h4>
+      <p>Lifeproof LVP, 90 sq ft all-in installed with baseboard.</p>
     </div>
   </div>
+  <p style="margin-top: 24px; font-size: 14px; font-weight: 600; color: var(--green);">Total Material Allowances: $2,740</p>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -716,13 +661,13 @@
 <div class="section">
   <div class="section-label">Schedule</div>
   <div class="section-title">Project Timeline</div>
-  <p>This is a focused, efficient remodel. Once materials arrive, we move quickly and minimize disruption. We coordinate around your schedule and keep you updated every step of the way.</p>
+  <p>This is a comprehensive bathroom remodel. Once materials arrive, we move quickly and minimize disruption. We coordinate around your schedule and keep you updated every step of the way.</p>
   
   <!-- Day-by-Day Timeline -->
   <div class="day-timeline" style="margin-top: 32px;">
     <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
       <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 1</div>
-      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Site prep, demo, plumbing</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Site prep, demo (shower tile, tub, soffit, existing countertop), plumbing rough</div>
     </div>
     <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
       <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 2</div>
@@ -730,44 +675,31 @@
     </div>
     <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
       <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Days 3–7</div>
-      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Tile work</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Tile work (shower walls, bench, niche)</div>
+    </div>
+    <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
+      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 8</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Tub set, plumbing finish, can lights electrical finish</div>
+    </div>
+    <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
+      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Days 9–10</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">LVP flooring + baseboard install</div>
+    </div>
+    <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
+      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 11</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Vanity countertop template and install, sink and faucet install</div>
+    </div>
+    <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--light);">
+      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 12</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Paint</div>
     </div>
     <div class="day-row" style="display: flex; align-items: flex-start; padding: 20px 0;">
-      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 8</div>
-      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Final walkthrough and cleanup</div>
+      <div class="day-label" style="font-size: 14px; font-weight: 700; color: var(--gold); min-width: 100px; letter-spacing: 0.5px;">Day 13</div>
+      <div class="day-desc" style="font-size: 15px; color: #444; line-height: 1.6;">Punch list, final walkthrough, and cleanup</div>
     </div>
   </div>
   
   <p style="margin-top: 24px; font-size: 13px; color: #888; font-style: italic;">Pending material availability. All timelines are working estimates.</p>
-</div>
-
-<!-- ══════════════════════════════════════════════
-     OPTIONAL ADD-INS (Hotel Upgrade Style)
-══════════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-label">Upgrade Your Project</div>
-  <div class="section-title">Optional Add-Ins</div>
-  <p>Want to take this remodel further? These premium upgrades pair perfectly with your shower project and can be added before or during construction.</p>
-  <div class="addin-grid">
-    <div class="addin-card">
-      <img src="img-vanity.png" alt="New Vanity Countertops" class="addin-card-image" />
-      <div class="addin-badge">Popular</div>
-      <div class="addin-card-content">
-        <h4>New Vanity Countertops</h4>
-        <p>Quartz countertop installation over existing vanity. Customer to provide sink and faucet. We handle demo of existing top, template, and install.</p>
-        <div class="addin-price">+$2,500 <span>added to project</span></div>
-      </div>
-    </div>
-    <div class="addin-card">
-      <img src="img-can-lights.png" alt="Soffit Removal + Vanity Lighting" class="addin-card-image" />
-      <div class="addin-badge">Upgrade</div>
-      <div class="addin-card-content">
-        <h4>Soffit Removal + Vanity Lighting</h4>
-        <p>Remove existing soffit, patch and repair drywall, run and install 3 recessed 4" can lights over vanity. Includes electrical rough and finish.</p>
-        <div class="addin-price">+$900 <span>added to project</span></div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -781,8 +713,8 @@
   <!-- Tier 1: Labor & Installation -->
   <div class="investment-box" style="margin-bottom: 24px;">
     <div class="inv-label">Labor & Installation</div>
-    <div class="inv-amount">$7,760</div>
-    <div class="inv-note">All labor, site work, demo, tile install, plumbing, and cleanup</div>
+    <div class="inv-amount">$12,280</div>
+    <div class="inv-note">All labor, site work, demo, tile install, plumbing, electrical, paint, flooring, and cleanup</div>
   </div>
   
   <!-- Tier 2: Material Allowances -->
@@ -797,19 +729,31 @@
       <span style="font-weight: 600; color: var(--dark);">$400</span>
     </div>
     <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 15px;">
-      <span style="color: #555;">Fixtures allowance</span>
+      <span style="color: #555;">Shower Trim Kit allowance</span>
       <span style="font-weight: 600; color: var(--dark);">$300</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 15px;">
+      <span style="color: #555;">Sinks (2x) allowance</span>
+      <span style="font-weight: 600; color: var(--dark);">$220</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 15px;">
+      <span style="color: #555;">Delta Faucets (2x) allowance</span>
+      <span style="font-weight: 600; color: var(--dark);">$120</span>
+    </div>
+    <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--light); font-size: 15px;">
+      <span style="color: #555;">LVP Flooring + Baseboard allowance</span>
+      <span style="font-weight: 600; color: var(--dark);">$900</span>
     </div>
     <div style="display: flex; justify-content: space-between; padding: 16px 0 0 0; font-size: 16px;">
       <span style="font-weight: 700; color: var(--green);">Total Allowances</span>
-      <span style="font-weight: 700; color: var(--green);">$1,500</span>
+      <span style="font-weight: 700; color: var(--green);">$2,740</span>
     </div>
   </div>
   
   <!-- Tier 3: Total Project Investment -->
   <div class="investment-box">
     <div class="inv-label">Total Project Investment</div>
-    <div class="inv-amount">$9,260</div>
+    <div class="inv-amount">$15,020</div>
     <div class="inv-note">Material allowances may adjust based on client selections.<br>Any overages billed as a change order.</div>
   </div>
 </div>
@@ -826,19 +770,19 @@
       <div class="pct-label">Deposit</div>
       <div class="pct">30%</div>
       <div class="pct-desc">Due at signing to secure your start date and order materials</div>
-      <div class="pct-amt">$2,778</div>
+      <div class="pct-amt">$4,506</div>
     </div>
     <div class="payment-card">
       <div class="pct-label">Midpoint</div>
       <div class="pct">40%</div>
       <div class="pct-desc">Due when demo is complete and tile installation begins</div>
-      <div class="pct-amt">$3,704</div>
+      <div class="pct-amt">$6,008</div>
     </div>
     <div class="payment-card">
       <div class="pct-label">Completion</div>
       <div class="pct">30%</div>
       <div class="pct-desc">Due upon final walkthrough and your approval</div>
-      <div class="pct-amt">$2,778</div>
+      <div class="pct-amt">$4,506</div>
     </div>
   </div>
 </div>

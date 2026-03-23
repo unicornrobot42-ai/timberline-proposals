@@ -37,6 +37,17 @@
       page-break-after: always;
     }
 
+    .cover-logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cover-logo-img {
+      height: 60px;
+      width: auto;
+    }
+
     .cover-logo {
       font-size: 13px;
       font-weight: 700;
@@ -117,6 +128,14 @@
       font-size: 12px;
       color: rgba(255,255,255,0.4);
       letter-spacing: 1px;
+    }
+
+    /* ── HEADER IMAGE ── */
+    .header-hero {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
     }
 
     /* ── SECTIONS ── */
@@ -295,6 +314,67 @@
     .phase-3 { background: var(--navy); color: var(--white); }
     .phase-4 { background: var(--gold); color: var(--dark); }
 
+    /* ── OPTIONAL ADD-INS ── */
+    .addin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .addin-card {
+      background: var(--white);
+      border: 2px solid var(--green);
+      border-radius: 8px;
+      padding: 28px 24px;
+      position: relative;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .addin-card:hover {
+      box-shadow: 0 8px 24px rgba(25, 65, 44, 0.12);
+    }
+
+    .addin-card .addin-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .addin-card h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .addin-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .addin-card .addin-price {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .addin-card .addin-price span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #888;
+    }
+
     /* ── INVESTMENT ── */
     .investment-box {
       background: var(--green);
@@ -383,34 +463,6 @@
       color: #555;
     }
 
-    /* ── SIGNATURE ── */
-    .sig-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      margin-top: 40px;
-    }
-
-    .sig-block label {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 48px;
-    }
-
-    .sig-line {
-      border-bottom: 2px solid var(--dark);
-      margin-bottom: 8px;
-    }
-
-    .sig-name {
-      font-size: 13px;
-      color: #666;
-    }
-
     /* ── FOOTER BAR ── */
     .footer-bar {
       background: var(--dark);
@@ -437,9 +489,12 @@
      COVER PAGE
 ══════════════════════════════════════════════ -->
 <div class="cover">
-  <div class="cover-logo">
-    Timberline Build Co
-    <span>Licensed General Contractor · Orange County, CA</span>
+  <div class="cover-logo-wrapper">
+    <img src="logo-header.png" alt="Timberline Build Co" class="cover-logo-img" />
+    <div class="cover-logo">
+      Timberline Build Co
+      <span>Licensed General Contractor · Orange County, CA</span>
+    </div>
   </div>
 
   <div class="cover-center">
@@ -467,16 +522,21 @@
 </div>
 
 <!-- ══════════════════════════════════════════════
+     HEADER HERO IMAGE
+══════════════════════════════════════════════ -->
+<img src="header-image.png" alt="Timberline Build Co — Premium Bathroom Remodeling" class="header-hero" />
+
+<!-- ══════════════════════════════════════════════
      PROJECT OVERVIEW
 ══════════════════════════════════════════════ -->
 <div class="section">
   <div class="section-label">Overview</div>
   <div class="section-title">Your Bathroom, Transformed</div>
   <p>
-    Gigi, we're excited to bring your vision to life. Your shower at 6127 Corsica has character — that round porthole window is a standout feature most bathrooms don't have. Our job is to build around it beautifully, replacing the dated tile with a clean, modern large-format porcelain that makes the space feel bigger, brighter, and easier to maintain.
+    Gigi, we're excited to bring your vision to life. Your shower at 6127 Corsica has character — that round porthole window is a standout feature most bathrooms don't have. Our job is to build around it beautifully, replacing the dated tile with new tile that makes the space feel bigger, brighter, and easier to maintain.
   </p>
   <p>
-    We'll remove the existing shower tile completely and install new material floor-to-ceiling, carefully framing that porthole window with custom tile work. The tub gets swapped for a fresh alcove unit, reset properly by our plumbing team. A recessed shampoo niche gives you built-in storage without taking up any wall space. Simple chrome fixtures keep things classic.
+    We'll remove the existing shower tile completely and install new tile floor-to-ceiling, carefully framing that porthole window with custom tile work. The tub gets swapped for a fresh alcove unit, reset properly by our plumbing team. A recessed shampoo niche gives you built-in storage without taking up any wall space.
   </p>
   <p>
     You'll have one point of contact throughout — me. Timberline self-performs all project management and coordinates trade work directly. No subcontractor chaos, no finger-pointing between crews. Just clear communication and quality craftsmanship from start to finish.
@@ -491,12 +551,12 @@
   <div class="section-title">Scope of Work</div>
   <ul class="scope-list">
     <li><strong>Full demo of existing shower tile</strong> — walls and floor removed down to substrate</li>
-    <li><strong>Large-format porcelain tile installation</strong> — full shower surround including walls and floor</li>
+    <li><strong>New tile installation</strong> — full shower surround including walls and floor</li>
     <li><strong>Custom tile work around porthole window</strong> — clean, waterproof framing that highlights this unique feature</li>
-    <li><strong>Recessed shampoo niche</strong> — tile inset, no lighting (built-in storage that won't collect water)</li>
+    <li><strong>Recessed shampoo niche</strong> — tile inset (built-in storage that won't collect water)</li>
     <li><strong>Tub removal and replacement</strong> — existing tub removed, new standard alcove tub installed</li>
     <li><strong>Complete plumbing</strong> — rough and finish work including tub set, drain connections, and all water lines</li>
-    <li><strong>Basic trim kit — showerhead and tub spout (chrome)</strong> — simple, durable hardware that matches the clean aesthetic</li>
+    <li><strong>Shower trim kit (head and tub spout)</strong> — finish TBD</li>
     <li><strong>Job site protection</strong> — floor coverings, zip walls, and dust barriers throughout work area</li>
     <li><strong>Porta potty on site</strong> — crew stays outside your home during work hours</li>
     <li><strong>Full cleanup and haul-off</strong> — all demo debris removed, site left broom-clean daily</li>
@@ -511,8 +571,6 @@
   <div class="section-title">What's NOT Included</div>
   <p>To keep your project focused and your budget tight, the following items are explicitly outside this scope. If any of these become desired during the project, we'll provide a change order with pricing before proceeding.</p>
   <ul class="not-included-list">
-    <li><strong>Existing tub surround tile walls</strong> — these remain as-is and are not part of this remodel</li>
-    <li><strong>Niche lighting</strong> — the shampoo niche is tile-only with no electrical or lighting</li>
     <li><strong>Shower curtain or rod</strong> — not included; client to provide if desired</li>
     <li><strong>Glass shower enclosure</strong> — frameless or framed glass available as an upgrade</li>
     <li><strong>Vanity, toilet, or fixtures outside shower/tub area</strong> — work is confined to shower and tub</li>
@@ -533,7 +591,7 @@
   <div class="allowance-grid">
     <div class="allowance-card">
       <h4>Tile Material</h4>
-      <p>$800 allowance included. Client selects large-format porcelain for shower walls and floor. Overages billed at cost with no markup.</p>
+      <p>$800 allowance included. Client selects tile for shower walls and floor. Overages billed at cost with no markup.</p>
     </div>
     <div class="allowance-card">
       <h4>Replacement Tub</h4>
@@ -541,7 +599,7 @@
     </div>
     <div class="allowance-card">
       <h4>Fixtures</h4>
-      <p>Basic chrome trim kit included — showerhead and tub spout. Client may supply own fixtures for labor-only install at no additional charge.</p>
+      <p>Basic trim kit included — showerhead and tub spout. Client may supply own fixtures for labor-only install at no additional charge.</p>
     </div>
     <div class="allowance-card">
       <h4>Permits</h4>
@@ -556,9 +614,9 @@
 <div class="section">
   <div class="section-label">Visualization</div>
   <div class="section-title">Design Direction</div>
-  <p>The concept render below shows the general direction — clean large-format tile, that beautiful porthole window as a focal point, and a modern aesthetic that feels timeless rather than trendy. Your final tile selection drives the exact look.</p>
+  <p>The concept render below shows the general direction — clean tile, that beautiful porthole window as a focal point, and a modern aesthetic that feels timeless rather than trendy. Your final tile selection drives the exact look.</p>
   <img class="render-img" src="timberline-corsica-shower-render-v2.png" alt="Shower remodel render — 6127 Corsica Cir" onerror="this.style.display='none'; document.getElementById('render-fallback').style.display='flex';" />
-  <div class="render-placeholder" id="render-fallback" style="display:none;">Render — Large Format Tile Shower Concept</div>
+  <div class="render-placeholder" id="render-fallback" style="display:none;">Render — Tile Shower Concept</div>
 </div>
 
 <!-- ══════════════════════════════════════════════
@@ -567,7 +625,7 @@
 <div class="section">
   <div class="section-label">Schedule</div>
   <div class="section-title">Project Timeline</div>
-  <p>This is a focused, efficient remodel. Once materials arrive, we move quickly and minimize disruption. Expect <strong>10–14 working days</strong> from start to completion. We coordinate around your schedule and keep you updated every step of the way.</p>
+  <p>This is a focused, efficient remodel. Once materials arrive, we move quickly and minimize disruption. Expect <strong>6–8 working days</strong> from start to completion. We coordinate around your schedule and keep you updated every step of the way.</p>
   <p>All timelines are working estimates subject to material lead times and any unforeseen conditions behind walls. We'll confirm your start date once the deposit is received and materials are ordered.</p>
   <div class="timeline-bar">
     <div class="timeline-phase phase-1">
@@ -575,16 +633,39 @@
       <div class="phase-time">Demo &amp; Prep</div>
     </div>
     <div class="timeline-phase phase-2">
-      <div class="phase-label">Days 3–8</div>
+      <div class="phase-label">Days 3–5</div>
       <div class="phase-time">Tile &amp; Plumbing</div>
     </div>
     <div class="timeline-phase phase-3">
-      <div class="phase-label">Days 9–12</div>
+      <div class="phase-label">Days 6–7</div>
       <div class="phase-time">Tub &amp; Fixtures</div>
     </div>
     <div class="timeline-phase phase-4">
-      <div class="phase-label">Days 13–14</div>
+      <div class="phase-label">Day 8</div>
       <div class="phase-time">Final &amp; Clean</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     OPTIONAL ADD-INS
+══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">Upgrade Your Project</div>
+  <div class="section-title">Optional Add-Ins</div>
+  <p>Want to take this remodel further? These premium upgrades pair perfectly with your shower project and can be added before or during construction.</p>
+  <div class="addin-grid">
+    <div class="addin-card">
+      <div class="addin-badge">Popular</div>
+      <h4>New Vanity Countertops</h4>
+      <p>Quartz countertop installation over existing vanity. Customer to provide sink and faucet. We handle demo of existing top, template, and install.</p>
+      <div class="addin-price">+$2,500 <span>added to project</span></div>
+    </div>
+    <div class="addin-card">
+      <div class="addin-badge">Upgrade</div>
+      <h4>Soffit Removal + Vanity Lighting</h4>
+      <p>Remove existing soffit, patch and repair drywall, run and install 3 recessed 4" can lights over vanity. Includes electrical rough and finish.</p>
+      <div class="addin-price">+$900 <span>added to project</span></div>
     </div>
   </div>
 </div>
@@ -598,7 +679,7 @@
   <p>This is the complete, all-in price for everything described above. Labor, materials within allowances, site protection, daily cleanup, and haul-off — all covered. No surprise line items, no nickel-and-diming. You know exactly what you're paying before we start.</p>
   <div class="investment-box">
     <div class="inv-label">Total Project Investment</div>
-    <div class="inv-amount">$8,990</div>
+    <div class="inv-amount">$9,470</div>
     <div class="inv-note">Fixed price · All labor and materials included · No hidden fees</div>
   </div>
 </div>
@@ -615,19 +696,19 @@
       <div class="pct-label">Deposit</div>
       <div class="pct">30%</div>
       <div class="pct-desc">Due at signing to secure your start date and order materials</div>
-      <div class="pct-amt">$2,697</div>
+      <div class="pct-amt">$2,841</div>
     </div>
     <div class="payment-card">
       <div class="pct-label">Midpoint</div>
       <div class="pct">40%</div>
       <div class="pct-desc">Due when demo is complete and tile installation begins</div>
-      <div class="pct-amt">$3,596</div>
+      <div class="pct-amt">$3,788</div>
     </div>
     <div class="payment-card">
       <div class="pct-label">Completion</div>
       <div class="pct">30%</div>
       <div class="pct-desc">Due upon final walkthrough and your approval</div>
-      <div class="pct-amt">$2,697</div>
+      <div class="pct-amt">$2,841</div>
     </div>
   </div>
 </div>
@@ -646,27 +727,6 @@
     <p><strong>Unforeseen Conditions:</strong> Sometimes walls hide surprises — water damage, outdated plumbing, code issues. If we uncover anything that affects the scope, we stop immediately, document it with photos, and present options before proceeding. You'll never be blindsided by a bill for work you didn't approve.</p>
     <br>
     <p><strong>Lien Waiver:</strong> Upon receipt of final payment, we provide a full unconditional lien waiver. Your home is clear, and our relationship closes clean.</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════
-     SIGNATURE
-══════════════════════════════════════════════ -->
-<div class="section">
-  <div class="section-label">Authorization</div>
-  <div class="section-title">Let's Get Started</div>
-  <p>By signing below, you're authorizing Timberline Build Co to proceed with the scope of work described in this proposal. We'll reach out within 24 hours to finalize your start date, begin material selections, and answer any remaining questions. Looking forward to building something beautiful together.</p>
-  <div class="sig-grid">
-    <div class="sig-block">
-      <label>Client Signature</label>
-      <div class="sig-line"></div>
-      <div class="sig-name">Gigi Smith · Date: ___________</div>
-    </div>
-    <div class="sig-block">
-      <label>Timberline Build Co</label>
-      <div class="sig-line"></div>
-      <div class="sig-name">Justin Sherman · Date: ___________</div>
-    </div>
   </div>
 </div>
 
